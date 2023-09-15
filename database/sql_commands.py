@@ -19,5 +19,4 @@ class Database:
             sql_queries.INSERT_USER_QUERY,
             (None, telegram_id, username, first_name, last_name)
         )
-
         self.connection.commit()

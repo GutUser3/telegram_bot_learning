@@ -2,8 +2,10 @@ from aiogram import types, Dispatcher
 from config import bot
 from const import START_TEXT
 from database.sql_commands import Database
+from keyboards.inline_buttons import start_keyboard
 
 async def start_button(message):
+    print(message)
     Database().sql_insert_user_command(
         telegram_id=message.from_user.id,
         username=message.from_user.username,
@@ -15,7 +17,8 @@ async def start_button(message):
         text=START_TEXT.format(
             username=message.from_user.username
         ),
-        parse_mode=types.ParseMode.MARKDOWN
+        parse_mode=types.ParseMode.MARKDOWN,
+        reply_markup=await start_keyboard()
     )
 
 def register_start_handlers(dp: Dispatcher):

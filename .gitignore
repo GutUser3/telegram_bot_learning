@@ -1,0 +1,8 @@
+.idea
+.env
+venv
+telegram_users.sqlite3
+requirements.txt
+/database/__init__.py
+/handlers/__init__.py
+.gitignore
