@@ -14,7 +14,11 @@ async def start_keyboard():
         "Registration",
         callback_data="fsm_start_form"
     )
-    markup.add(questionnaire_button).add(form_start_button)
+    report_button = InlineKeyboardButton(
+        "Report user",
+        callback_data="report_user"
+    )
+    markup.add(questionnaire_button).add(form_start_button).add(report_button)
     return markup
 
 

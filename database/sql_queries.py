@@ -28,3 +28,5 @@ INSERT_USER_QUERY = '''INSERT OR IGNORE INTO telegram_bot_users VALUES (?, ?, ?,
 INSERT_USER_FORM_QUERY = """INSERT OR IGNORE INTO user_form VALUES (?,?,?,?,?,?,?,?)"""
 
 SELECT_USER_FORM_QUERY = """SELECT * FROM user_form WHERE TELEGRAM_ID = ? """
+
+SELECT_ID = """SELECT TELEGRAM_ID FROM telegram_bot_users WHERE USERNAME = ?"""

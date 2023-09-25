@@ -45,3 +45,6 @@ class Database:
             sql_queries.SELECT_USER_FORM_QUERY,
             (telegram_id,)
         ).fetchall()
+
+    def sql_select_id(self, username):
+        return self.cursor.execute(sql_queries.SELECT_ID, (username,)).fetchall()
