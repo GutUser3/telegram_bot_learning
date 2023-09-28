@@ -22,7 +22,20 @@ async def start_keyboard():
         "Referral Menu",
         callback_data="referral_menu"
     )
-    markup.add(questionnaire_button).add(form_start_button).add(report_button).add(referral_button)
+    news_button = InlineKeyboardButton(
+        "5 politics news",
+        callback_data="latest news"
+    )
+    markup.add(
+        questionnaire_button
+    ).add(
+        form_start_button
+    ).add(
+        report_button
+    ).add(
+        referral_button
+    ).add(
+        news_button)
     return markup
 
 
