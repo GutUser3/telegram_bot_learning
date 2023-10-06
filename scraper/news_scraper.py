@@ -17,9 +17,12 @@ class NewsScraper:
         #     print(link)
         # for title in titles:
         #     print(title)
-        return links[:5]
+        print(links)
+        # return links[:5]
 
+news = NewsScraper()
+print(news.parse_data())
 
-if __name__ == "__main__":
-    scraper = NewsScraper()
-    scraper.parse_data()
+# if __name__ == "__main__":
+#     scraper = NewsScraper()
+#     scraper.parse_data()

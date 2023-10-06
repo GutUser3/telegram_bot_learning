@@ -24,7 +24,7 @@ async def start_keyboard():
     )
     news_button = InlineKeyboardButton(
         "5 politics news",
-        callback_data="latest news"
+        callback_data="latest_news"
     )
     markup.add(
         questionnaire_button
