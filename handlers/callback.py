@@ -3,7 +3,7 @@ from config import bot
 from database.sql_commands import Database
 from const import PROFILE_CAPTION_TEXT
 from keyboards.inline_buttons import question_first_keyboard
-from scraper.async_scraper import AsyncScraper
+# from scraper.async_scraper import AsyncScraper
 import asyncio
 
 async def start_questionnaire_call(call: types.CallbackQuery):
@@ -14,15 +14,15 @@ async def start_questionnaire_call(call: types.CallbackQuery):
         reply_markup=await question_first_keyboard()
     )
 
-async def latest_news_call(call: types.CallbackQuery):
-    scraper = AsyncScraper()
-    await scraper.parse_data()
-    links = scraper.get_response_urls()
-    for link in links:
-        await bot.send_message(
-            chat_id=call.message.chat.id,
-            text=link
-        )
+# async def latest_news_call(call: types.CallbackQuery):
+#     scraper = AsyncScraper()
+#     await scraper.parse_data()
+#     links = scraper.get_response_urls()
+#     for link in links:
+#         await bot.send_message(
+#             chat_id=call.message.chat.id,
+#             text=link
+#         )
 
 
 async def male_answer_call(call: types.CallbackQuery):
@@ -68,5 +68,5 @@ def register_callback_handlers(dp: Dispatcher):
                                        lambda call: call.data == "female_answer")
     dp.register_callback_query_handler(my_profile_call,
                                        lambda call: call.data == "my_profile")
-    dp.register_callback_query_handler(latest_news_call,
-                                       lambda call: call.data == "latest_news")
+    # dp.register_callback_query_handler(latest_news_call,
+    #                                    lambda call: call.data == "latest_news")
